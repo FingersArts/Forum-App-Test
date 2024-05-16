@@ -1,10 +1,6 @@
 const api = (() => {
   const BASE_URL = 'https://forum-api.dicoding.dev/v1';
 
-  function putAccessToken(token) {
-    localStorage.setItem('accessToken', token);
-  }
-
   function getAccessToken() {
     return localStorage.getItem('accessToken');
   }
@@ -17,6 +13,10 @@ const api = (() => {
         Authorization: `Bearer ${getAccessToken()}`,
       },
     });
+  }
+
+  function putAccessToken(token) {
+    localStorage.setItem('accessToken', token);
   }
 
   async function register({ name, email, password }) {
