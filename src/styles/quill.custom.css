@@ -1,0 +1,55 @@
+/* quill styles */
+.quill-editor {
+  border: var(--bs-border-width) solid navy;
+  background-color: #ffffff;
+  border-radius: var(--bs-border-radius);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.quill-editor:has(.ql-editor:focus) {
+  border-color: #4f4f4f;
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+.ql-toolbar.ql-snow,
+.ql-container.ql-snow {
+  font-family: var(--fa-font);
+  border: 0;
+  font-size: 1rem;
+}
+
+.ql-toolbar.ql-snow {
+  border-bottom: var(--bs-border-width) solid var(--bs-border-color);
+}
+
+.ql-editor p {
+  margin-bottom: 1rem;
+}
+
+.ql-toolbar.ql-snow button svg .ql-stroke {
+  stroke: black;
+}
+
+.ql-toolbar.ql-snow button svg .ql-fill {
+  fill: black;
+}
+
+.ql-toolbar.ql-snow button:hover,
+.ql-toolbar.ql-snow button:focus,
+.ql-toolbar.ql-snow button.ql-active {
+  color: black;
+}
+
+.ql-editor {
+  min-height: 30vh;
+  overflow: auto;
+  resize: vertical;
+}
+
+.comments .ql-editor {
+  min-height: 20vh;
+}
+
+.ql-snow .ql-editor a {
+  text-decoration: none;
+}
