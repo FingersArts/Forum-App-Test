@@ -13,14 +13,13 @@ function asyncPopulateUsersThreadsAndCategories() {
       const threads = await api.getAllThreads();
 
       dispatch(receiveUsersActionCreator(users));
-      dispatch(receiveThreadsActionCreator(threads));
-      const categories = api.getAllCategories(threads);
+      dispatch(receiveThreadsActionCreator(users));
+
+      const categories = api.getAllCategories();
       dispatch(receiveCategoriesActionCreator(categories));
 
       return { users, threads, categories };
     } catch (error) {
-      // even if there is an error, still set the threads value to an empty array.
-      // This is to help manage skeleton loading in home page.
       dispatch(receiveThreadsActionCreator([]));
       throw new Error(error.message);
     } finally {
