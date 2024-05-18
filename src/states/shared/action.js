@@ -11,10 +11,10 @@ function asyncPopulateUsersThreadsAndCategories() {
 
       const users = await api.getAllUsers();
       const threads = await api.getAllThreads();
-      const categories = api.getAllCategories(threads);
 
       dispatch(receiveUsersActionCreator(users));
       dispatch(receiveThreadsActionCreator(threads));
+      const categories = api.getAllCategories(threads);
       dispatch(receiveCategoriesActionCreator(categories));
 
       return { users, threads, categories };
